@@ -10,20 +10,22 @@ boolean f=false;
 String query="";
 if (request.getParameter("col1")!="")
 	{
-		
-       		
        		
        			for(int i=1;i<=Integer.parseInt(newtblfields);i++)
        			{
        				if (request.getParameter("col" + i)!= "" )
        				{
+       					String subquery = request.getParameter("col" + i );
+       					if(!subquery.equals("NULL")){
+       						subquery = "\"" + subquery + "\"";
+       					}
        					if (query=="")
        					{
-       					query= "\"" + request.getParameter("col" + i ) + "\"";
+	       					query= subquery;
        					}
        					else
        					{
-       	  			    query=query+ ",\""+ request.getParameter("col" + i) + "\"";
+    	   	  			    query=query+ ","+subquery;
        	  			    }
        	  			}
        	  			else
