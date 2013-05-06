@@ -32,7 +32,7 @@ if (request.getParameter("row1col1")!=null)
 	       					String coltype = request.getParameter("row" + i + "col2");
 	       					query=colname + " " + coltype;
 	       					if(!coltype.equals("DATE") && !coltype.equals("DATETIME")){
-	       						query=query+ "(" + request.getParameter("row" + i + "col3") + ")"
+	       						query=query+ "(" + request.getParameter("row" + i + "col3") + ")";
 	       					}
 	       					query=query+" " + request.getParameter("row" + i + "col4");
        					}
