@@ -28,11 +28,17 @@ if (request.getParameter("row1col1")!=null)
        				{
        					if (query=="")
        					{
-       					query=request.getParameter("row" + i + "col1") + " " + request.getParameter("row" + i + "col2") + "(" + request.getParameter("row" + i + "col3") + ") " + request.getParameter("row" + i + "col4");
+	       					String colname = request.getParameter("row" + i + "col1");
+	       					String coltype = request.getParameter("row" + i + "col2");
+	       					query=colname + " " + coltype;
+	       					if(!coltype.equals("DATE") && !coltype.equals("DATETIME")){
+	       						query=query+ "(" + request.getParameter("row" + i + "col3") + ")"
+	       					}
+	       					query=query+" " + request.getParameter("row" + i + "col4");
        					}
        					else
        					{
-       	  			    query=query+ ","+ request.getParameter("row" + i + "col1") + " " + request.getParameter("row" + i + "col2") + "(" + request.getParameter("row" + i + "col3") + ") " + request.getParameter("row" + i + "col4");
+       	  			    	query=query+ ","+ request.getParameter("row" + i + "col1") + " " + request.getParameter("row" + i + "col2") + "(" + request.getParameter("row" + i + "col3") + ") " + request.getParameter("row" + i + "col4");
        	  			    }
        	  			}
        	  			else

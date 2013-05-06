@@ -88,7 +88,7 @@ int m;
 				                    </td>
 				                <td style="width: 100px;text-align: left;background-color:#f5f5f5">
 				                 <%temp="row" + m + "col2"; %>
-				                <select name=<%=temp%> > <option selected="selected"><%=rsmd.getColumnTypeName(m).toString()%></option><option>VARCHAR</option><option>DATE</option><option>TINYINT</option></select>
+				                <select name=<%=temp%> > <option selected="selected"><%=rsmd.getColumnTypeName(m).toString()%></option><option>VARCHAR</option><option>DATE</option><option>DATETIME</option><option>TINYINT</option></select>
 				                <td style="width: 100px; text-align: left; background-color:#f5f5f5">
 				                 <%temp="row" + m + "col3";%>
 				                 <input type="text" name=<%=temp%> value=<%=rsmd.getColumnDisplaySize(m)%>>
@@ -177,7 +177,7 @@ int m;
                     </td>
                 <td style="width: 100px;text-align: left;background-color:#f5f5f5">
                  <%temp="row" + m + "col2"; %>
-                <select name=<%=temp%>> <option>VARCHAR</option><option>DATE</option><option>TINYINT</option></select>
+                <select name=<%=temp%>> <option>VARCHAR</option><option>DATE</option><option>DATETIME</option><option>TINYINT</option></select>
                 <td style="width: 100px; text-align: left; background-color:#f5f5f5">
                  <%temp="row" + m + "col3";%>
                  <input type="text" name=<%=temp%>>
